@@ -1,0 +1,31 @@
+schema {
+  query: Query
+}
+
+type Query {
+  allAuthors: [Author]
+  allBlogs: [Blog]
+  allCountries: [Country]
+  blogByTitle(title: String!): [Blog]
+}
+
+type Author {
+	id: ID
+	name: String
+}
+
+type Blog {
+	id: ID
+	title: String
+	description: String
+	views: Int
+	author: Author
+}
+
+type Country {
+	id: ID
+	name: String
+	address: String
+	phone: String
+}
+
